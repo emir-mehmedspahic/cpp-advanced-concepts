@@ -38,7 +38,11 @@ C++17 / C++20, compiled with GCC/Clang, no external dependencies.
 
 ## Building & Running
 
+Each file is a standalone, self-contained example. Compile and run any of them individually:
+
 ```bash
-g++ -std=c++20 -Wall -Wextra <file>.cpp -o output
-./output
+g++ -std=c++20 -Wall -Wextra 01_memory_management/unique_ptr.cpp -o unique_ptr
+./unique_ptr
 ```
+
+Replace the path with any file in the repo to run that example.
