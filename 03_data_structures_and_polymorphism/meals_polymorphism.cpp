@@ -45,7 +45,7 @@ public:
     double DajCijenuPica() const { return cijena_pica; }
 
     double DajUkupnuCijenu() const override {
-        std::cout << DajCijenuObroka() + cijena_pica;
+        return DajCijenuObroka() + cijena_pica;
     }
 
     void Ispisi() const override {
