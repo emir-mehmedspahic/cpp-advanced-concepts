@@ -9,7 +9,7 @@ Most C++ courses teach you to *use* `std::vector` or `std::unique_ptr` — this 
 ## What it demonstrates
 
 - **Manual memory management**: custom RAII-based smart pointer, bump/arena allocator with explicit alignment handling
-- **Modern template mechanics**: perfect forwarding with universal references, variadic templates, compile-time evaluation with `if constexpr`
+- **Modern template mechanics**: variadic templates, compile-time evaluation with `if constexpr`, and perfect forwarding with universal references (in the arena allocator's `create<T>(Args&&...)`)
 - **Data structures from first principles**: dynamic array with exponential heap reallocation (`std::vector` mechanics), doubly linked list with heap-allocated nodes
 - **OOP design**: dynamic polymorphism via a virtual-dispatch example
 
@@ -23,10 +23,9 @@ C++17 / C++20, compiled with GCC/Clang, no external dependencies.
 .
 ├── 01_memory_management/
 │   ├── unique_ptr.cpp         # Custom smart pointer implementing RAII and Move Semantics
-│   └── arena_allocator.cpp    # Bump/Arena memory allocator with explicit alignment handling
+│   └── arena_allocator.cpp    # Bump/Arena allocator with explicit alignment; create<T>() uses std::forward
 │
 ├── 02_templates_and_move/
-│   ├── perfect_forwarding.cpp # Modern std::forward and universal references (T&&)
 │   ├── variadic_templates.cpp # Variadic templates and compile-time evaluation (if constexpr)
 │   └── custom_array.cpp       # Fixed-size compile-time array implementation
 │
